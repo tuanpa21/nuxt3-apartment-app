@@ -6,6 +6,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  vite: {
+    vue: {
+      reactivityTransform: true,
+    },
+  },
   runtimeConfig: {
     public: {
       apiBaseUrl: 'http://localhost:3001',
