@@ -1,0 +1,28 @@
+{
+  "apartment": [
+    {
+      "id": 1,
+      "name": "36 To Huu",
+      "imageUrl": "",
+      "floor": 2,
+      "door": 204,
+      "inventory": [{ "id": 1, "name": "Table", "quantity": 2 }]
+    },
+    {
+      "id": 2,
+      "name": "108 Nguyen Thanh Binh",
+      "imageUrl": "",
+      "floor": 6,
+      "door": 618,
+      "inventory": [{ "id": 2, "name": "Television", "quantity": 1 }]
+    },
+    {
+      "id": 3,
+      "name": "266 Quang Trung",
+      "imageUrl": "",
+      "floor": 1,
+      "door": 101,
+      "inventory": [{ "id": 3, "name": "Chair", "quantity": 12 }]
+    }
+  ]
+}
