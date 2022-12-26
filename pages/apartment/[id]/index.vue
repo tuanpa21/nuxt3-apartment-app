@@ -4,7 +4,6 @@
     <div class="prose mb-6">
       <h1>{{ `Apartment ${id} detail` }}</h1>
     </div>
-
     <DetailApartmentInfo :apartment="apartmentInfo" />
     <DetailInventoryList :apartment="apartmentInfo" />
   </div>
