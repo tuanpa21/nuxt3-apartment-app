@@ -1,5 +1,6 @@
 <template>
   <div class="w-full">
+    <SharedBreadcrumb :items="breadcrumbItems" />
     <div class="prose mb-10">
       <h1>My Apartments</h1>
     </div>
@@ -19,4 +20,12 @@ const { data } = await useAsyncData('apartments', () =>
 )
 
 const apartments = computed(() => data.value)
+
+const breadcrumbItems = [
+  {
+    id: 1,
+    title: 'Home',
+    link: '/',
+  },
+]
 </script>
