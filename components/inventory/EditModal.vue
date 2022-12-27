@@ -31,8 +31,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps, watch } from 'vue'
-
 import { InventoryItem } from '~/types/inventory-item'
 
 interface Props {

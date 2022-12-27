@@ -103,7 +103,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
 import { InventoryItem } from '~/types/inventory-item'
 import { Apartment } from '~/types/apartment'
 

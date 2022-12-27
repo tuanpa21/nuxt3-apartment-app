@@ -6,11 +6,27 @@
         :src="props.apartment.imageUrl"
       />
     </div>
-    <div class="flex flex-col gap-1">
-      <p><strong>ID:</strong> {{ props.apartment.id }}</p>
-      <p><strong>Address:</strong> {{ props.apartment.address }}</p>
-      <p><strong>Floor</strong>: {{ props.apartment.floor }}</p>
-      <p><strong>Door:</strong> {{ props.apartment.door }}</p>
+    <div class="flex w-full flex-row">
+      <div class="flex w-7/12 flex-col">
+        <div class="flex flex-row">
+          <dt class="w-1/3"><strong>ID:</strong></dt>
+          <dd class="w-2/3">{{ props.apartment.id }}</dd>
+        </div>
+        <div class="flex flex-row">
+          <dt class="w-1/3"><strong>Address:</strong></dt>
+          <dd class="w-2/3">{{ props.apartment.address }}</dd>
+        </div>
+      </div>
+      <div class="flex w-5/12 flex-col">
+        <div class="flex flex-row">
+          <dt class="w-1/3"><strong>Floor:</strong></dt>
+          <dd class="w-2/3">{{ props.apartment.floor }}</dd>
+        </div>
+        <div class="flex flex-row">
+          <dt class="w-1/3"><strong>Door:</strong></dt>
+          <dd class="w-2/3">{{ props.apartment.door }}</dd>
+        </div>
+      </div>
     </div>
   </div>
 </template>

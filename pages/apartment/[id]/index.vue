@@ -3,11 +3,13 @@
     <SharedBreadcrumb :items="breadcrumbItems" />
     <div class="">
       <h1 class="prose mb-6 text-2xl font-bold">
-        {{ `Apartment ${id} detail` }}
+        {{ `APARTMENT DETAIL | ${apartmentInfo.address}` }}
       </h1>
     </div>
-    <ApartmentDetail :apartment="apartmentInfo" />
-    <InventoryList :apartment="apartmentInfo" />
+    <div class="flex w-full flex-row space-x-10">
+      <div class="w-1/2"><ApartmentDetail :apartment="apartmentInfo" /></div>
+      <div class="w-1/2"><InventoryList :apartment="apartmentInfo" /></div>
+    </div>
   </div>
 </template>
 
@@ -17,8 +19,14 @@ import { Apartment } from '~/types/apartment'
 const route = useRoute()
 const { id } = route.params
 
+const { data } = await useAsyncData(`apartments/${id}`, () =>
+  useBaseFetch(`/apartments/${id}`)
+)
+
+const apartmentInfo = computed(() => data.value as Apartment)
+
 useHead({
-  title: `Apartment ${id} detail`,
+  title: `Apartment detail | ${apartmentInfo.value.address}`,
 })
 
 const breadcrumbItems = [
@@ -29,13 +37,7 @@ const breadcrumbItems = [
   },
   {
     id: 2,
-    title: `Apartment ${id} detail`,
+    title: `Apartment detail`,
   },
 ]
-
-const { data } = await useAsyncData(`apartments/${id}`, () =>
-  useBaseFetch(`/apartments/${id}`)
-)
-
-const apartmentInfo = computed(() => data.value as Apartment)
 </script>
