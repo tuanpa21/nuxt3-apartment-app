@@ -1,3 +1,5 @@
+const isProductionEnv = process.env.NODE_ENV === 'production'
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -21,7 +23,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBaseUrl: 'http://localhost:3001',
+      apiBaseUrl: isProductionEnv
+        ? 'https://apartment-management-api.vercel.app'
+        : 'http://localhost:3001',
     },
   },
 })
