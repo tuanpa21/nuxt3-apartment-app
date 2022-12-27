@@ -4,6 +4,11 @@ Build an demo web application for the `Apartment Management System`, and deploy 
 
 Technology stack: `Nuxt` with `Vue.js 3`, `Tailwind CSS`, `DaisyUI`, `JSON Server`
 
+## Demo
+
+- [Demo Application](https://apartment-management-app.vercel.app/)
+- [Mock API Server](https://apartment-management-api.vercel.app/)
+
 ## Installation and Run
 
 Make sure to install the dependencies before run app:
