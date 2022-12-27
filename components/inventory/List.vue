@@ -1,9 +1,9 @@
 <template>
   <div>
     <div
-      class="my-6 flex w-full flex-col justify-between sm:flex-row sm:items-center"
+      class="mb-4 flex w-full flex-col justify-between sm:flex-row sm:items-center"
     >
-      <h2 class="text-xl font-bold">Inventory list</h2>
+      <h2 class="text-xl font-bold">INVENTORY LIST</h2>
       <div class="mt-4 flex gap-x-4 sm:mt-0">
         <button
           v-if="isViewMode"
@@ -23,7 +23,7 @@
         </button>
         <button
           v-if="isEditMode"
-          class="btn-primary btn-sm btn sm:btn-md"
+          class="btn-secondary btn-sm btn sm:btn-md"
           @click="toPreviewMode"
         >
           Preview changes
@@ -37,7 +37,7 @@
         </button>
         <button
           v-if="isPreviewMode"
-          class="btn-primary btn-sm btn sm:btn-md"
+          class="btn-success btn-sm btn sm:btn-md"
           @click="publishChanges"
         >
           Approve changes
@@ -49,33 +49,33 @@
       <table class="table w-full">
         <thead>
           <tr>
-            <th>ID</th>
+            <th class="text-center">ID</th>
             <th>Name</th>
-            <th>Quantity</th>
-            <th v-if="isEditMode">Actions</th>
+            <th class="text-center">Quantity</th>
+            <th v-if="isEditMode" class="text-center">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in listItems" :key="item.id">
-            <td>
-              <span class="text-gray-600">{{ item.id }}</span>
+            <td class="text-center">
+              <span>{{ item.id }}</span>
             </td>
             <td>
-              <span class="text-gray-600">{{ item.name }}</span>
+              <span>{{ item.name }}</span>
             </td>
-            <td>
-              <span class="text-gray-600">{{ item.quantity }}</span>
+            <td class="text-center">
+              <span>{{ item.quantity }}</span>
             </td>
             <td v-if="isEditMode">
-              <div class="flex gap-x-3">
+              <div class="flex justify-center gap-x-3">
                 <button
-                  class="btn-primary btn-sm btn sm:btn-md"
+                  class="btn-accent btn-sm btn"
                   @click="() => openEditModal(item.id)"
                 >
                   Edit
                 </button>
                 <button
-                  class="btn-ghost btn-sm btn sm:btn-md"
+                  class="btn-error btn-sm btn"
                   @click="() => onClickDelete(item.id)"
                 >
                   Delete
@@ -86,13 +86,11 @@
         </tbody>
       </table>
     </div>
-
     <InventoryAddModal
       :is-open="isNewModalOpen"
       :close-modal="closeAddModal"
       :on-submit="handleAddNewInventory"
     />
-
     <InventoryEditModal
       :is-open="isEditModalOpen"
       :close-modal="closeEditModal"

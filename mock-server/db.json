@@ -36,6 +36,16 @@
       "door": 101,
       "inventory": [
         {
+          "id": 6,
+          "name": "Chair",
+          "quantity": 4
+        },
+        {
+          "id": 4,
+          "name": "Refrigerator",
+          "quantity": 1
+        },
+        {
           "id": 3,
           "name": "Chair",
           "quantity": 12
@@ -52,8 +62,7 @@
         {
           "id": 1,
           "name": "Refrigerator",
-          "quantity": 3,
-          "isNew": true
+          "quantity": 3
         }
       ]
     }

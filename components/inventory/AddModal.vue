@@ -10,8 +10,22 @@
       <label
         class="btn-sm btn-circle btn absolute right-2 top-2"
         @click="props.closeModal"
-        >✕</label
       >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </label>
       <h3 class="mb-8 text-lg font-bold">Add new inventory</h3>
       <InventoryForm
         key="add-form"
@@ -51,7 +65,6 @@ const addNewItem = () => {
     id: 0,
     name: item.value,
     quantity: quantity.value,
-    isNew: true,
   }
 
   props.onSubmit(newItem)
