@@ -8,7 +8,7 @@
   <div class="modal cursor-pointer">
     <div class="modal-box relative">
       <button
-        class="btn-sm btn-circle btn-outline btn absolute right-4 top-4"
+        class="btn-outline btn-sm btn-circle btn absolute right-4 top-4"
         @click="props.closeModal"
       >
         <svg
