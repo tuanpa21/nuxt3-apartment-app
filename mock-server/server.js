@@ -1,18 +1,7 @@
-/* eslint-disable */
-
-// Move to writable folder
-const path = require('path')
-const fs = require('fs')
-
-const filePath = path.join('/tmp', 'db.json')
-
-fs.readFile('db.json', (_, data) => {
-  fs.writeFileSync(filePath, data)
-})
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsonServer = require('json-server')
 const server = jsonServer.create()
-const router = jsonServer.router(filePath)
+const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
@@ -23,7 +12,7 @@ server.use(
   })
 )
 server.use(router)
-server.listen(3001, () => {
+server.listen(3000, () => {
   console.log('JSON Server is running')
 })
 
