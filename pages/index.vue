@@ -1,12 +1,8 @@
 <template>
   <div class="w-full">
     <SharedBreadcrumb :items="breadcrumbItems" />
-    <div class="prose mb-10">
-      <h1>My Apartments</h1>
-    </div>
-    <div
-      class="space-y-8 md:grid md:grid-cols-3 md:gap-12 md:space-y-0 lg:grid-cols-4"
-    >
+    <h1 class="prose mb-10 text-2xl font-bold">APARTMENTS LIST</h1>
+    <div class="grid grid-cols-3 space-y-8 md:gap-12 md:space-y-0">
       <template v-for="apartment in apartments" :key="apartment.id">
         <HomeApartmentItem :item="apartment" />
       </template>
@@ -15,17 +11,18 @@
 </template>
 
 <script setup lang="ts">
+import { BreadcrumbItem } from '~~/types/breadcrumb-item'
+
 const { data } = await useAsyncData('apartments', () =>
   useBaseFetch('/apartments')
 )
 
 const apartments = computed(() => data.value)
 
-const breadcrumbItems = [
+const breadcrumbItems: BreadcrumbItem[] = [
   {
     id: 1,
     title: 'Home',
-    link: '/',
   },
 ]
 </script>

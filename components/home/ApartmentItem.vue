@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="`/apartment/${props.item.id}`">
     <div class="card mb-6 h-80 w-full border bg-base-100 shadow-sm md:mb-0">
-      <figure class="h-1/2">
+      <figure class="h-1/2 object-cover">
         <img :src="props.item.imageUrl" alt="" />
       </figure>
       <div class="card-body">

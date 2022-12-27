@@ -1,8 +1,10 @@
 <template>
-  <div class="w-full">
+  <div class="max-h-full">
     <SharedBreadcrumb :items="breadcrumbItems" />
-    <div class="prose mb-6">
-      <h1>{{ `Apartment ${id} detail` }}</h1>
+    <div class="">
+      <h1 class="prose mb-6 text-2xl font-bold">
+        {{ `Apartment ${id} detail` }}
+      </h1>
     </div>
     <ApartmentDetail :apartment="apartmentInfo" />
     <InventoryList :apartment="apartmentInfo" />
@@ -28,7 +30,6 @@ const breadcrumbItems = [
   {
     id: 2,
     title: `Apartment ${id} detail`,
-    link: `/apartment/${id}`,
   },
 ]
 
