@@ -1,5 +1,5 @@
 <template>
-  <div class="form-control w-full max-w-xs">
+  <div class="form-control w-full">
     <label class="label">
       <span class="label-text">Item</span>
     </label>
@@ -15,7 +15,7 @@
       </option>
     </select>
   </div>
-  <div class="form-control w-full max-w-xs">
+  <div class="form-control w-full">
     <label class="label">
       <span class="label-text">Quantity</span>
     </label>
@@ -23,7 +23,7 @@
       :value="props.quantity"
       type="number"
       placeholder="Input number of items"
-      class="input-bordered input w-full max-w-xs"
+      class="input-bordered input w-full"
       min="1"
       @input="
         $emit(

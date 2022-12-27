@@ -86,12 +86,12 @@
         </tbody>
       </table>
     </div>
-    <InventoryAddModal
+    <InventoryModalAdd
       :is-open="isNewModalOpen"
       :close-modal="closeAddModal"
       :on-submit="handleAddNewInventory"
     />
-    <InventoryEditModal
+    <InventoryModalEdit
       :is-open="isEditModalOpen"
       :close-modal="closeEditModal"
       :on-submit="handleEditInventory"
