@@ -1,42 +1,29 @@
-# Nuxt 3 Minimal Starter
+# Apartment Management App
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Build an demo web application for the `Apartment Management System`, and deploy it on `Vercel`. This app provides CRUD features for user to manage inventories in each apartment.
 
-## Setup
+Technology stack: `Nuxt` with `Vue.js 3`, `Tailwind CSS`, `DaisyUI`, `JSON Server`
 
-Make sure to install the dependencies:
+## Installation and Run
 
-```bash
-# yarn
-yarn install
+Make sure to install the dependencies before run app:
 
-# npm
+```shell
 npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
 npm run dev
 ```
 
-## Production
+- After execute above commands, webapp run at `localhost:3000` and mock server run at `localhost:3001`
 
-Build the application for production:
+## Structure
 
-```bash
-npm run build
-```
+The below folder structure follows [Nuxt directory structure](https://nuxtjs.org/docs/get-started/directory-structure/):
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- `assets` includes Tailwind css file
+- `components` includes Vue.js components which are then imported into your pages
+- `composable` includes common functions
+- `layout` includes layouts which used by pages
+- `mock-server` includes a json server for mocking API server
+- `pages` includes views and routes
+- `types` includes common types, interfaces
+- `utils` includes helper functions
