@@ -1,10 +1,18 @@
-import { create, router as _router, defaults } from 'json-server'
-const server = create()
-const router = _router('mock-server/db.json')
-const middlewares = defaults()
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const jsonServer = require('json-server')
+const server = jsonServer.create()
+const router = jsonServer.router('db.json')
+const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
+server.use(
+  jsonServer.rewriter({
+    '/api/*': '/$1',
+  })
+)
 server.use(router)
-server.listen(3000, () => {
+server.listen(3000, '0.0.0.0', () => {
   console.log('JSON Server is running')
 })
+
+module.exports = server
